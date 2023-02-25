@@ -47,7 +47,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
 		.antMatchers(PUBLIC).permitAll()
 		.antMatchers(HttpMethod.GET, CLIENT_OR_ADMIN).permitAll()
 		.antMatchers(HttpMethod.GET, ADMIN).permitAll()
-		.antMatchers(HttpMethod.POST, CLIENT_OR_ADMIN).hasAnyRole("OPERATOR", "ADMIN")
+		.antMatchers(HttpMethod.POST, CLIENT_OR_ADMIN).hasAnyRole("CLIENT", "ADMIN")
 		.anyRequest().hasAnyRole("ADMIN");
 	}
 }
